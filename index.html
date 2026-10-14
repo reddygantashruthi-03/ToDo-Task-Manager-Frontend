@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="eyebrow">YOUR DAY, ORGANIZED</div>
+      <h1>To-Do <span>Task Manager</span></h1>
+      <p>Make a plan. Get things done. Feel good.</p>
+    </header>
+
+    <section class="panel">
+      <form id="task-form" class="task-form">
+        <input type="hidden" id="task-id">
+        <label class="sr-only" for="title">Task title</label>
+        <input id="title" name="title" maxlength="120" placeholder="What needs to get done?" required>
+        <label class="sr-only" for="description">Description</label>
+        <input id="description" name="description" maxlength="500" placeholder="Add a short description (optional)">
+        <div class="form-row">
+          <label>Due date <input id="dueDate" type="date"></label>
+          <label>Priority
+            <select id="priority">
+              <option value="MEDIUM">Medium</option>
+              <option value="HIGH">High</option>
+              <option value="LOW">Low</option>
+            </select>
+          </label>
+          <button type="submit" id="submit-btn">Add task <span>＋</span></button>
+        </div>
+      </form>
+      <div class="toolbar">
+        <div><strong id="task-count">0 tasks</strong><span id="task-summary"> · 0 completed</span></div>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter active" data-filter="ALL">All</button>
+          <button class="filter" data-filter="PENDING">Pending</button>
+          <button class="filter" data-filter="COMPLETED">Completed</button>
+        </div>
+      </div>
+      <div id="message" class="message" role="status"></div>
+      <ul id="task-list" class="task-list"></ul>
+      <div id="empty" class="empty">
+        <div class="empty-icon">✓</div>
+        <h2>No tasks here yet</h2>
+        <p>Add a task above and make today count.</p>
+      </div>
+    </section>
+    <footer>Small steps make big progress.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
